@@ -59,6 +59,12 @@ const HomeMainbar = () => {
    }]
 
    const location = useLocation()
+   const user = 1;
+   const navigate = useNavigate();
+   const redirect = ()=>{
+        alert("Login first!");
+        navigate('/Auth');
+    }
 
   return (
     <div className='main-bar'>
@@ -66,7 +72,7 @@ const HomeMainbar = () => {
         {
           location.pathname==='/' ? <h1>Top Questions</h1> : <h1>All Questions</h1>
         }
-        <Link to='/AskQuestion' className='ask-btn'>Ask Question</Link>
+        <Link to={user===null ? redirect() : '/AskQuestions'} className='ask-btn'>Ask Question</Link>
       </div>
       <div>
         {
