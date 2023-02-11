@@ -59,7 +59,7 @@ const HomeMainbar = () => {
    }]
 
    const location = useLocation()
-   const user = 1;
+   const user = null;
    const navigate = useNavigate();
    const redirect = ()=>{
         alert("Login first!");
