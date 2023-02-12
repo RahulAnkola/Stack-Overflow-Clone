@@ -62,7 +62,7 @@ const HomeMainbar = () => {
    const user = null;
    const navigate = useNavigate();
    const redirect = ()=>{
-        alert("Login first!");
+        //alert("Login first!");
         navigate('/Auth');
     }
 
