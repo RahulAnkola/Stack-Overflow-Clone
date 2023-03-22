@@ -32,12 +32,13 @@ export const login = async(req,res) => {
             return res.status(404).json({ message: "User don't Exist."})
         }
 
-        const isPasswordCrt = await bcrypt.compare(password, existinguser.password)
+        const isPasswordCrt = await bycrpt.compare(password, existinguser.password)
         if(!isPasswordCrt){
             return res.status(400).json({message : "Invalid credentials"})
         }
         const token = jwt.sign({ email: existinguser.email, id:existinguser._id}, "test" , { expiresIn: '1h'});
         res.status(200).json({ result: existinguser, token })
     } catch (error)  {
+        console.log(error)
         res.status(500).json("Something went worng...")
     }}
