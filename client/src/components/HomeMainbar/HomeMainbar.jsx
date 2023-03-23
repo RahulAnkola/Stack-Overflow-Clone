@@ -59,7 +59,7 @@ const HomeMainbar = () => {
    }]
 
    const location = useLocation()
-   const user = null;
+   const user = useSelector((state) => (state.currentUserReducer));
    const navigate = useNavigate();
    const redirect = ()=>{
         //alert("Login first!");
